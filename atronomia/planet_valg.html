@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script/planet_valg.js" defer></script>
+    <title>Planet Valg</title>
+</head>
+<body>
+    <!--Baggrund-->
+    <div class="stjerne_container">
+        <video class="stjerner_background" src="/video/stjerner.mp4" autoplay loop muted></video>
+    </div>
+
+    <!--Indhold - class navne, pv = planet_valg-->
+    <div class="pv_container">
+        <div id="pv_sol">
+            <img src="img/pv_sol.png" alt="Sol og ringe">
+        </div>
+        <div class="pv_planeter">
+            <img id="pv_jorden" src="img/pv_jorden.png" alt="Jorden">
+            <img id="pv_jupiter" src="img/pv_jupiter.png" alt="Jupiter">
+            <img id="pv_mars" src="img/pv_mars.png" alt="Mars">
+            <img id="pv_neptun" src="img/pv_neptun.png" alt="Neptun">
+            <img id="pv_saturn" src="img/pv_saturn.png" alt="Saturn">
+            <img id="pv_uranus" src="img/pv_uranus.png" alt="Uranus">
+            <img id="pv_venus" src="img/pv_venus.png" alt="Venus">
+        </div>
+        <img id="pv_ufo" src="img/pv_ufo.png" alt="UFO">
+    </div>
+    
+    <div class="astronaut astronaut_pv">
+        <p class="main_text">
+            VÆLG DEN PLANET DU GERNE VIL VIDE MERE OM  
+        </p>
+        <img src="img/astonaut.png" alt="Atronaut">
+    </div>
+
+     <!-- Tilføj til alle sider-->
+     <button onclick="history.back()" class="btn_tilbage_lille">TILBAGE</button>
+     <img class="hoejtaler" id="hoejtaler" src="img/lyd.png" alt="hoejtaler">
+     <audio id="astronaut_lyd" src="astronaut_lyd.mp3"></audio>
+</body>
+</html>

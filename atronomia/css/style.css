@@ -1,0 +1,680 @@
+/*Reset*/
+body {
+  margin: 0px;
+  max-width: 1920px;
+  max-height: 2880px;
+  width: 1920px;
+  height: 2880px;
+  overflow: hidden;
+  background-color: black;
+}
+
+/*Baggrund*/
+.stjerne_container {
+  display: flex;
+  left: 0;
+  top: 0;
+  justify-content: start;
+  align-items: center;
+  position: absolute;
+  z-index: -999;
+  object-fit: cover;
+  height: 2880px;
+  width: 1920px;
+}
+
+.stjerner_background {
+  height: 2880px;
+  width: 1920px;
+  object-fit: cover;
+  object-position: 50% 100%;
+}
+
+@font-face {
+    font-family: 'Stretch Pro';
+    src: url('/font/stretch-pro.regular.ttf');
+  }
+
+@font-face {
+    font-family: 'Archivo Black';
+    src: url('/font/ArchivoBlack-Regular.ttf');
+  }
+
+  @font-face {
+    font-family: 'Archivo';
+    src: url('/font/Archivo-VariableFont_wdth\,wght.ttf');
+  }
+
+  /*Preset til siden*/
+  :root {
+    --green: #A3FF9B;
+    --blue: #88D4C3;
+    --beige: #D7D08A;
+    --orange: #D58644;
+  }
+
+  .overskrift {
+    font-family: 'Stretch Pro';
+    font-size: 150px;
+    font-weight: bold;
+    color: var(--green);
+  }
+
+  
+
+  .planet_navn {
+    font-family: 'Stretch Pro';
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--green);
+  }
+
+  .nummer {
+    font-family: 'Stretch Pro';
+    font-size: 300px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .main_text {
+    font-family: 'Archivo';
+    font-size: 70px;
+    font-weight: 600;
+    color: white;
+  }
+
+  /*Planetside preset*/
+  .planet_tal {
+    font-family: 'Archivo';
+    font-size: 240px;
+    font-weight: lighter;
+    color: white;
+  }
+
+  .planet_overskrift {
+    font-family: 'Stretch Pro';
+    font-size: 150px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .under_overskrift {
+    font-family: 'Archivo Black';
+    font-size: 92px;
+  }
+
+  .info_graphics {
+    font-family: 'Archivo Black';
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+  .info_text {
+    font-family: 'Archivo';
+    font-size: 25px;
+    color: white;
+  }
+
+  /*Knapper*/
+
+  .btn_start {
+    border: none;
+    padding: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    background-color: transparent;
+  }
+
+  .btn_start a {
+    background-color: var(--green);
+    text-align: center;
+    color: black;
+    padding: 100px 200px;
+    font-family: 'Stretch Pro';
+    font-size: 150px;
+    border-radius: 40px;
+    text-decoration: none;
+    box-shadow: 20px 30px #88D4C3;
+  }
+
+  .btn_tilbage_lille {
+    cursor: pointer;
+    border: 5px solid white;
+    bottom: 2%;
+    left: 5%;
+    position: absolute;
+    background-color: transparent;
+    text-align: center;
+    color:  white;
+    padding: 45px 55px;
+    font-family: 'Stretch Pro';
+    font-size: 40px;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 10px 15px #88D4C3;
+    z-index: 100;
+  }
+
+  .btn_tilbage_stor {
+    cursor: pointer;
+    border: 5px solid white;
+    background-color: transparent;
+    text-align: center;
+    color:  white;
+    padding: 75px 120px;
+    font-family: 'Stretch Pro';
+    font-size: 50px;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 20px 30px #88D4C3;
+  }
+
+  .btn_normal {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .btn_normal a {
+    background-color: var(--green);
+    text-align: center;
+    color: black;
+    padding: 75px 120px;
+    font-family: 'Stretch Pro';
+    font-size: 50px;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 20px 30px #88D4C3;
+  }
+
+  .hoejtaler {
+    position: absolute;
+    bottom: 1%;
+    right: 2%;
+    cursor: pointer;
+    z-index: 100
+  }
+
+  /* Svævende astronaut*/
+
+  .astronaut {  
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+    padding: 10px;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    z-index: 25;
+    text-align: center;
+    align-items: center;
+}
+
+.astronaut_pv p {
+  font-size: 50px;
+}
+
+.astronaut_pv img {
+  width: 330px;
+  transform: scaleX(-1);
+}
+ 
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }    
+}
+
+  /*-----------Planet Valg Start-----------*/
+
+  .pv_container {
+    height: 2880px;
+    width: 1920px;
+    overflow: hidden;
+  }
+
+  #pv_sol {
+    position: absolute;
+    left: -80%;
+    top: -3%;
+    z-index: 1;
+  }
+
+  .pv_planeter {
+    position: absolute;
+    z-index: 10;
+    height: 2880px;
+    width: 1920px;
+  }
+
+  #pv_jorden {
+    position: absolute;
+    left: 630px;
+    top: 815px;
+    cursor: pointer;
+    transition: 200ms;
+  }
+
+  #pv_jupiter {
+    position: absolute;
+    left: 400px;
+    top: 2100px;
+    cursor: pointer;
+    transition-duration: 200ms;
+  }
+
+  #pv_mars {
+    position: absolute;
+    left: 960px;
+    top: 1240px;
+    cursor: pointer;
+    transition-duration: 200ms;
+  }
+
+  #pv_neptun {
+    position: absolute;
+    left: 1350px;
+    top: 1930px;
+    cursor: pointer;
+    transition-duration: 200ms;
+  }
+  
+  #pv_uranus {
+    position: absolute;
+    left: 1250px;
+    top: 910px;
+    cursor: pointer;
+    transition-duration: 200ms;
+  }
+
+  #pv_venus {
+    position: absolute;
+    left: 630px;
+    top: 1610px;
+    cursor: pointer;
+    transition-duration: 200ms;
+  }
+
+  #pv_ufo {
+    position: absolute;
+    left: 1500px;
+    top: 500px;
+    cursor: pointer;
+    transition-duration: 200ms;
+    z-index: 10;
+  }
+
+  #astronaut_lyd {
+    display: none;
+  }
+
+
+
+   /***************-------TEOERIER ----------******************/
+
+   #ufo_lyd {
+    display: none;
+   }
+
+   .teori_overskrift {
+    text-align: center;
+    margin: 0%;
+    padding-top: 300px;
+    padding-bottom: 200px;
+   }
+  
+   .teori_text {
+    margin-top: 30px;
+    margin-left: 250px;
+    margin-right: 250px;
+   }
+
+   .question_t {
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    font-family: 'Stretch Pro';
+    font-size: 70px;
+   }
+
+   .flex-container_teori{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: 200px;
+  }
+
+  /*----------- specielt for teorier ----------*/
+
+.ufo {
+  padding-top: 0px;
+}
+
+  /*----------- specielt for korncirkler ----------*/
+
+ .teori_overskrift_korn {
+  text-align: center;
+  margin: 0%;
+  padding-top: 400px;
+  padding-bottom: 200px;
+ }
+
+ .korncirkler_img {
+  display: flex;
+  justify-content: center;
+  opacity: 60%;
+  position:absolute;
+  left: 0px;
+  right: 0px;
+  z-index: -1;
+ }
+
+ /*----------- specielt for procentsider ----------*/
+ .teori_overskrift_procent{
+  text-align: center;
+  padding-top: 400px;
+}
+ .procent{
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+ .flex-container_teori_procent{
+  position: absolute;
+  bottom: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  padding-top: 500px;
+}
+
+  /*----------- specielt for area51 ----------*/
+ 
+  .area51_billede {
+    width: 90%;
+  }
+
+ /*----------- specielt for Jorden 2.0 ----------*/
+ .jordenmars_img {
+  display: flex;
+  justify-content: space-around;
+  opacity: 60%;
+  position:absolute;
+  left: 0px;
+  right: 0px;
+  z-index: -1;
+ }
+ .mars_billede {
+  width: 40%;
+ }
+
+ .mars_jorden_billede {
+ width: 30%;  
+ height: 30%;
+ padding-top:300px;
+ padding-left: 50px;
+ }
+
+.raket_img {
+  position: absolute;
+  bottom: -200px;
+  left: -100px;
+  opacity: 60%;
+  z-index: -1;
+}
+
+ /*----------- når der er to knapper----------*/
+
+ .flex-container_teori2{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-top: 50px;
+  flex-direction: row;
+ }
+
+ .flex-container_teori2 button {
+  margin: 50px;
+ }
+
+ /* MATHIAS CSS-START*/
+
+.mars_text {
+  color: var(--orange);
+}
+
+.jorden_text {
+  color: var(--blue);
+}
+
+.beige_text {
+  color: var(--beige)
+}
+
+/* ---------- MARS.HTML ---------- */
+#mars_background_image {
+  display: flex;
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: -998;
+}
+
+.planet_overskrift {
+  padding-top: 150px;
+  padding-left: 250px;
+}
+
+.info_graphics_tal {
+  font-family: 'Archivo';
+  font-size: 100px;
+  font-weight: 200;
+  color: white;
+}
+
+
+
+/* INFOGRAPHICS GRID 1 SLUT*/
+
+
+/* INFOGRAPHICS GRID 2*/
+.planet_grids {
+  float: right;
+  margin-right: 200px;
+}
+
+.planet_grid_item1 {
+  grid-area: top_left;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 0px 45px 45px 45px;
+  height: 500px;
+}
+
+.planet_grid_item1 h2 {
+  padding: 0px;
+  margin: 0px;
+}
+
+#planet_block1 {
+  margin-left: 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+#planet_block2 {
+  margin-left: 25px;
+  align-items: center;
+  justify-content: center;
+  }
+
+.planet_grid_item2 {
+  grid-area: top_right;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 0px 45px 45px 45px;
+  height: 500px;
+}
+
+.planet_grid_item2 h3 {
+  padding: 0px;
+  margin: 0px;
+}
+
+.planet_grid_item3 {
+  grid-area: down_left;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0px 45px 45px 45px;
+  height: 450px;
+}
+
+.planet_grid_item3 h2 {
+  padding: 0px;
+  margin: 0px;
+}
+
+.planet_grid_item4 {
+  grid-area: down_right;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 0px 45px 45px 45px;
+  height: 450px;
+}
+
+.planet_grid_item5 {
+  grid-area: down_center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0px 45px 45px 45px;
+  height: 450px;
+}
+
+.planet_grid_item5 h2 {
+  padding: 0px;
+  margin: 0px;
+}
+
+.planet_grid_2 {
+  display: grid;
+  grid-template-areas:
+    'top_left top_left  top_right'
+    'down_left  down_center down_right';
+  gap: 25px;
+  padding: 25px;
+  width: 1000px;
+}
+
+.planet_grid_2>div {
+  border: 5px solid;
+  border-color: #ffffff;
+}
+
+.planet_grid_item1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.planet_tid1 {
+  font-family: 'Archivo';
+  font-size: 36px;
+  color: white;
+  font-weight: 700;
+}
+
+.planet_tid2 {
+  font-family: 'Archivo';
+  font-size: 36px;
+  color: white;
+  font-weight: 300;
+}
+
+.planet_grid_icon {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+/* INFOGRAPHICS GRID 2 SLUT*/
+
+
+
+/* MARS FAKTASIDE ASTRONAUT BILLEDE */
+.planet_astronaut_billede {
+margin-top: 1400px;
+}
+
+/* MARS FAKTASIDE --- KNAPPER */
+.mars_faktaside_knapper {
+  display: flex;
+  margin-left: 100px;
+  margin-right: 100px;
+  justify-content: space-around;
+}
+
+
+/* ---------- MARS.HTML SLUT ---------- */
+
+/* JORDEN.HTML */
+#jorden_background_image {
+  display: flex;
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: -998;
+}
+
+.jorden_vand {
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+.jorden_vand_2 {
+
+  text-align: center;
+}
+
+/* INFOGRAPHICS GRID 1*/
+.planet_item_1 {
+  grid-area: top;
+  margin: 0px;
+  padding: 0px;
+}
+
+.planet_item_2 {
+  grid-area: left;
+  margin: 0px;
+  padding: 0px;
+}
+
+.planet_item_3 {
+  grid-area: right;
+  margin: 0px;
+  padding: 0px;
+}
+
+.planet_grid_1 {
+  display: grid;
+  grid-template-areas:
+    'top top'
+    'left right';
+  gap: 25px;
+  padding: 25px;
+  width: 975px;
+}
+
+/* INFOGRAPHICS GRID 1 SLUT*/
